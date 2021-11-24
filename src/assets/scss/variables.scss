@@ -1,0 +1,52 @@
+// fonts
+$font-ns: "Noto Sans KR", "Apple Gothic", "Malgun Gothic", Arial, sans-serif;
+$font-mi: "Material Icons";
+$font-mio: "Material Icons Outlined";
+$font-mir: "Material Icons Round";
+$font-mis: "Material Icons Sharp";
+$font-mit: "Material Icons Two Tone";
+
+// bootstrap
+$primary: #333333;
+$font-family-base: $font-ns;
+$font-size-base : 1.6rem;
+$line-height-lg: 1;
+$line-height-sm: 1;
+$line-height-base: 1;
+$breadcrumb-divider: "";
+$link-decoration: none;
+
+// custom
+$container-width: 1280px;
+
+// mixins
+@mixin font-mi($code, $type:'') {
+  @if ($type == "o") {
+    font-family: $font-mio;
+  } @else if($type == "r") {
+    font-family: $font-mir;
+  } @else if($type == "s") {
+    font-family: $font-mis;
+  } @else if($type == "t") {
+    font-family: $font-mit;
+  } @else {
+    font-family: $font-mi;
+  }
+  content: $code;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+}
+@mixin object-fit($of: cover) {
+  object-fit: $of;
+  width: 100%;
+  height: 100%;
+}
+@mixin multi-truncate($n) {
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: $n;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
